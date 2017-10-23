@@ -22,18 +22,24 @@ public class TrxWriter {
 	
 public void write() {
 	
+	int numhead = 67;
+	int localizadorCount = 123448;
 	BufferedWriter output = null;
-	String docTimeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+	//String docTimeStamp = new SimpleDateFormat("yyyyMMddHHmm").format(new Date());
+	//String headerTimeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 	int lnum;
     try {
-        File file = new File("C:\\Users\\Julian Perrino\\Desktop\\pas_99_" + docTimeStamp + ".txt");
+        //File file = new File("C:\\Users\\Julian Perrino\\Desktop\\RedHat\\pas_99_" + docTimeStamp + ".txt");
+        File file = new File("C:\\Users\\Julian Perrino\\Desktop\\RedHat\\pas_99_2017101100"+numhead+".txt");
         output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.US_ASCII));
         //output = new BufferedWriter(new FileWriter(file));
-        output.write("C|" + docTimeStamp + "|pas_99_" + docTimeStamp + ".txt");
+        //output.write("C|" + headerTimeStamp + "|pas_99_" + docTimeStamp + ".txt");
+        output.write("C|20171001171722|pas_99_2017101100"+numhead+".txt");
         output.newLine();
-        for(lnum = 0; lnum < 10; lnum++){
-        	output.write(generateLine());
+        for(lnum = 0; lnum < 1000; lnum++){
+        	output.write("D|10|01|99|AU La Plata, Ruta 2|Berazategui|00065M|A|SI9091223344|0201|0201|000000001027|123456789876ABCD"+localizadorCount+"|20171001171722|qwertyuiopasdfghjklzxcvbqwertyuiopasdfghjklzxcvbqwertyuiopasdfghjklzxcvbqwertyuiopasdfghjklzxcvb1234");
             output.newLine();
+            localizadorCount++;
         }
         output.write("T|" + lnum);
     	}
@@ -65,7 +71,7 @@ public String generateLine() {
 					TrxFields.getCategoriaDetectada()[0] + "|" +
 					TrxFields.getImporte() + "|" +
 					TrxFields.getLocalizador() + "|" +
-					TrxFields.getTimeStamp() + "|" +
+					"20171001171722" + "|" +
 					TrxFields.getDatosAdicionales();
 	
 	return line;

@@ -14,9 +14,9 @@ public class TrxFields {
 	private static String[] tag = {"SI9091223344", "SI9091223349"}
 						  , categoriaAlta = {"0201"}
 						  , categoriaDetectada = {"0201"};
-	private static String importe = "000000001025";
+	private static String importe = "000000001026";
 	private static String localizador = null;
-	private static int numVia = 123456;
+	private static int numVia = 123356;
 	private static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 	private static String datosAdicionales = "qwertyuiopasdfghjklzxcvbqwertyuiopasdfghjklzxcvbqwertyuiopasdfghjklzxcvbqwertyuiopasdfghjklzxcvb1234";
 	
